@@ -250,10 +250,7 @@ button {
   text-transform: none;
 }
 
-button,
-[type=button] {
-  -webkit-appearance: button;
-}
+
 button:not(:disabled),
 [type=button]:not(:disabled) {
   cursor: pointer;
@@ -296,7 +293,6 @@ button:not(:disabled),
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
 }
 
 .display-2 {
