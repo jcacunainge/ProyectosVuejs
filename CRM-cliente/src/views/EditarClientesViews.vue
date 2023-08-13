@@ -1,22 +1,36 @@
 <script setup>
-import ClienteService from '../services/ClienteService';
-import { FormKit } from '@formkit/vue'
-import { useRoute, useRouter } from 'vue-router'
-import RouterLink from '../components/UI/RouterLink.vue';
-import Heading from '../components/UI/Heading.vue';
+    import { onMounted, reactive } from 'vue';
+    import ClienteService from '../services/ClienteService';
+    import RouterLink from '../components/UI/RouterLink.vue'
+    import { FormKit } from '@formkit/vue'
+    import { useRoute, useRouter } from 'vue-router'
+    import Heading from '../components/UI/Heading.vue';
 
-defineProps({
-    titulo: {
-        type: String
-    }
+    defineProps({
+        titulo: {
+            type: String
+        }
     })
 
     const router = useRouter()
+    //Obtenemos el Id , para tener la información del formulario
+    const route = useRoute()
+    const { id } = route.params
 
-    const handleSubmit = (data) =>{
-        data.estado = 1
-        ClienteService.agregarCliente(data)
-            .then(respuesta => {
+    const formData = reactive({
+    })
+
+    onMounted(() => {
+        ClienteService.obtenerCliente(id)
+        .then(({data}) => {
+            Object.assign(formData, data)
+        })
+        .catch(error => console.log(error))
+    })
+
+    const handleSubmit = (data) => {
+        ClienteService.actualizarCliente(id, data)
+        .then(respuesta => {
                 //Redirecionar
                 router.push({name:'inicio'})
             })
@@ -37,9 +51,10 @@ defineProps({
                 
                 <FormKit 
                     type="form"
-                    submit-label="Agregar Cliente"
+                    submit-label="Guardar Cambios"
                     incomplete-message = "No se pudo enviar, reviza los campos por favor"
                     @submit="handleSubmit"
+                    :value="formData"
                     >
                         
                     <!-- para que tenga ese efecto hay que instalar theme y configuarlo -->
@@ -51,6 +66,7 @@ defineProps({
                         help="Ingrese el nombre del cliente que desea agregar"
                         validation="required"
                         :validation-messages="{required:'Este campo es obligatorio'}"
+                        v-model="formData.nombre"
                     />
 
                     <FormKit
@@ -61,6 +77,8 @@ defineProps({
                         help="Ingrese los apellidos del cliente que desea agregar"
                         validation="required"
                         :validation-messages="{required:'Este campo es obligatorio'}"
+                        v-model="formData.apellido"
+
                     />
 
                     <FormKit
@@ -71,16 +89,18 @@ defineProps({
                         help="Ingrese el email del cliente que desea agregar"
                         validation="required|email"
                         :validation-messages="{required:'Este campo es obligatorio', email: 'Ingresa un email válido'}"
+                        v-model="formData.email"
                     />
 
                     <FormKit
                         type="number"
                         label="Telefono:"
                         name="telefono"
-                        placeholder="Teléfono: XXXXXXXXXX"
+                        placeholder="Teléfono: XXX-XXX-XXXX"
                         help="Ingrese el número del cliente que desea agregar"
                         validation="require"
                         :validation-messages="{required:'Este campo es obligatorio'}"
+                        v-model="formData.telefono"
                     />
 
                     <FormKit
@@ -89,6 +109,7 @@ defineProps({
                         name="empresa"
                         placeholder="Empresa del cliente"
                         help="Ingrese el nombre de la empresa"
+                        v-model="formData.empresa"
                     />
 
                     <FormKit
@@ -97,14 +118,15 @@ defineProps({
                         name="cargo"
                         placeholder="Empresa del cliente"
                         help="Ingrese el cargo del cliente"
+                        v-model="formData.cargo"
                     />
 
                 </FormKit>
             </div>
         </div>
-        
     </div>
 </template>
+
 <style>
     .formkit-wrapper{
         max-width: 100%;

@@ -11,5 +11,4 @@
     <main class="max-w-6xl mx-auto mt-10 p-5">
         <RouterView></RouterView>
     </main>
-    
 </template>
