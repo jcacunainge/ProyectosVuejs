@@ -1,14 +1,3 @@
 {
-  "clientes": [
-    {
-      "nombre": "Jhan",
-      "apellido": "Acuña",
-      "email": "jcacunainge@gmail.com",
-      "telefono": "3007347395",
-      "empresa": "Indra",
-      "cargo": "Traine",
-      "estado": 1,
-      "id": 1
-    }
-  ]
+  "clientes": []
 }
