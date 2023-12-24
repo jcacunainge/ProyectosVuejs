@@ -1,0 +1,26 @@
+// Función para iniciar sesión con correo electrónico y contraseña
+// Esta función utiliza Firebase Auth para autenticar a un usuario mediante correo electrónico y contraseña.
+// Toma como argumentos el correo electrónico y la contraseña proporcionados por el usuario.
+const signInWithEmailAndPassword = async (authInstance, email, password) => {
+    // Realiza una solicitud de inicio de sesión con el método signInWithEmailAndPassword de Firebase Auth.
+    // Retorna una promesa que se resuelve con las credenciales del usuario autenticado si la autenticación es exitosa.
+    // Si la autenticación falla, la promesa se rechaza con un error que puede ser manejado en un bloque catch.
+};
+
+// Función para escuchar cambios en el estado de autenticación
+// Esta función utiliza Firebase Auth para detectar y responder a los cambios en el estado de autenticación.
+// Permite ejecutar una acción cada vez que cambia el estado de autenticación (inicio de sesión o cierre de sesión).
+const onAuthStateChanged = (authInstance, callback) => {
+    // Registra un observador para el estado de autenticación utilizando onAuthStateChanged de Firebase Auth.
+    // Este observador se activa cada vez que cambia el estado de autenticación.
+    // Invoca la función de callback proporcionada con el usuario autenticado si existe, o con null si no hay usuario autenticado.
+};
+
+// Función para cerrar sesión de usuario autenticado
+// Esta función utiliza Firebase Auth para cerrar la sesión de un usuario autenticado.
+// Al llamar a esta función, el usuario actualmente autenticado se desconecta.
+const signOut = async (authInstance) => {
+    // Realiza la acción de cerrar sesión utilizando el método signOut de Firebase Auth.
+    // Retorna una promesa que se resuelve si la operación de cierre de sesión es exitosa.
+    // Si hay algún error durante la operación, la promesa se rechaza con un error que puede ser manejado en un bloque catch.
+};
