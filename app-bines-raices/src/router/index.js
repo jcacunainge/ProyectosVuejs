@@ -11,11 +11,16 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView 
     },
     {
-      path: '/Login',
-      name: 'Login',
+      path: '/propiedades/:id',
+      name: 'propiedad',
+      component: () => import('../views/PropiedadView.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
       component: () => import('../views/LoginView.vue')
     },
     {
@@ -25,22 +30,19 @@ const router = createRouter({
       meta: { requiresAuth: true }, // Esta metadata indica que la ruta '/admin' requiere autenticación
       children: [
         {
-          path: '/admin/propiedades',
+          path: 'propiedades',
           name: 'admin-propiedades',
           component: () => import('../views/admin/AdminView.vue'),
-          meta: { requiresAuth: true },
         },
         {
           path: '/admin/nueva',
           name: 'nueva-propiedad',
           component: () => import('../views/admin/NuevaPropiedadView.vue'),
-          meta: { requiresAuth: true },
         },
         {
           path: '/admin/editar/:id',
           name: 'editar-propiedad',
           component: () => import('../views/admin/EditarPropiedadView.vue'),
-          meta: { requiresAuth: true },
         },
 
       ]
@@ -59,7 +61,7 @@ router.beforeEach(async (to, from, next) => {
       next(); // Continúa con la navegación si el usuario está autenticado
     } catch (error) {
       console.log(error); // Muestra un error en la consola si falla la autenticación
-      next({ name: 'Login' }); // Redirige al usuario a la página de inicio de sesión (login)
+      next({ name: 'login' }); // Redirige al usuario a la página de inicio de sesión (login)
     }
   } else {
     // Si la ruta no requiere autenticación, se permite el acceso directamente

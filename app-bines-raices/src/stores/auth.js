@@ -63,6 +63,7 @@ export const useAuthStore = defineStore('auth', () => {
         return authUser.value;
     });
 
+
     // Retorna las funciones y propiedades que se pueden utilizar fuera de la tienda
     return {
         login,
