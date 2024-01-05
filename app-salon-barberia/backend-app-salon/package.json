@@ -1,0 +1,21 @@
+{
+  "name": "backend-app-salon",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend para App-Salon en MEVN",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Jhan Carlos Acuña Ordoñez",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  }
+}
