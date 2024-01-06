@@ -8,15 +8,17 @@ import servicesRoutes from './routes/servicesRoutes.js'
 //Variables de entorno
 dotenv.config()
 
-
 //Configurar la app
 const app = express()
+
+//Leer datos via body
+app.use(express.json())
 
 //Conectar a la bases de datos
 db()
 
 //Definir una ruta
-app.get('/api/services', servicesRoutes)
+app.use('/api/services', servicesRoutes)
 
 //Definir puerto
 const PORT = process.env.PORT || 4000 
