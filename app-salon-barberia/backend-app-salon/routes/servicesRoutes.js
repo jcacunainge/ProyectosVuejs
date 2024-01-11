@@ -7,7 +7,7 @@ const router = express.Router()
 // Definir una ruta
 router.route('/')
     .post(createService)
-    .get(getServiceById)
+    .get(getServices)
 
 router.route('/:id')
     .get(getServiceById)
