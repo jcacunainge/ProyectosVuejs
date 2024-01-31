@@ -14,8 +14,7 @@ const createService = async (req, res) => {
         await service.save()
         res.json({
             msg: 'El Servicio se creo correctamente'
-        })
-        console.log(service)    
+        })   
     } catch {
         console.log(colors.red(error))
     }

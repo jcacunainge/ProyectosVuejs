@@ -1,22 +1,22 @@
 <script setup>
-import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
-const props = defineProps({
-    cliente: {
-        typeo:Object
-    }
-})
+    import { computed } from 'vue'
+    import { RouterLink } from 'vue-router'
+    const props = defineProps({
+        cliente: {
+            typeo:Object
+        }
+    })
 
-defineEmits(['actualizar-estado', 'eliminar.cliente'])
+    defineEmits(['actualizar-estado', 'eliminar.cliente'])
 
-const nombreCliente = computed(() => {
-    return props.cliente.nombre + ' ' + props.cliente.apellido
-})
+    const nombreCliente = computed(() => {
+        return props.cliente.nombre + ' ' + props.cliente.apellido
+    })
 
-const estadoCliente = computed(() => {
-    return props.cliente.estado
+    const estadoCliente = computed(() => {
+        return props.cliente.estado
 
-})
+    })
 </script>
 
 <template>

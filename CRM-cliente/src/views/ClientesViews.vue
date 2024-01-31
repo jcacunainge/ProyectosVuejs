@@ -1,9 +1,9 @@
 <script setup>
-    import { onMounted,ref, computed } from 'vue';
-    import ClienteService from '../services/ClienteService';
+    import { onMounted, ref, computed } from 'vue';
+    import ClienteService from '../services/ClienteService'
     import RouterLink from '../components/UI/RouterLink.vue'
-    import Heading from '../components/UI/Heading.vue';
-    import Cliente from '../components/Cliente.vue';
+    import Heading from '../components/UI/Heading.vue'
+    import Cliente from '../components/Cliente.vue'
 
     const clientes = ref([])
 
@@ -23,7 +23,7 @@
         return clientes.value.length > 0
     })
 
-    const actualizarEstado = ({id, estado}) =>{
+    const actualizarEstado = ( { id, estado } ) =>{
         ClienteService.cambiarEstado(id, {estado: !estado})
         .then(()=> {
             const i = clientes.value.findIndex(cliente => cliente.id === id)

@@ -18,7 +18,7 @@
     // Función para deshabilitar fechas en el calendario
     const disableDate = (date) => {
         const today = new Date()
-        return date < today || date.getMonth() > today.getMonth() || [0,6].includes(date.getDay())
+        return date < today || date.getMonth() > today.getMonth() || [0,6].includes(date.getDay() )
     }
 </script>
 
@@ -60,7 +60,7 @@
             </div>
 
             <!-- Botones para selección de hora -->
-            <div class="flex-1 grid grid-cols-1 xl:grid-cols-2 gap-5 mt-10 lg:mt-0">
+            <div v-if="appointments.isDateSelected" class="flex-1 grid grid-cols-1 xl:grid-cols-2 gap-5 mt-10 lg:mt-0">
                 <button
                     v-for="hour in appointments.hours"
                         class="block text-blue-500 rounded text-xl font-black  ml-10 w-3/4"

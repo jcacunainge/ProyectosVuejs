@@ -4,6 +4,8 @@ import colors from 'colors'
 import cors from 'cors'
 import { db } from './config/db.js'
 import servicesRoutes from './routes/servicesRoutes.js'
+import authRoutes from './routes/authRoutes.js'
+import appointmentsRoutes from './routes/appointmentsRoutes.js'
 
 //Variables de entorno
 dotenv.config()
@@ -19,25 +21,30 @@ db()
 
 //Definir y configurar CORS
 
-const whiteList = [process.env.FRONTEND_URL]
+const whiteList = [process.env.FRONTEND_URL, undefined]
+
+// if(process.argv[2] === 'postman'){
+//     whiteList.push(undefined)
+// }
 
 const corsOptions = {
-    origin: function(origin, callback) {
-        if(whiteList.includes(origin)){
-            //Permite la conexión
-            callback(null, true)
+    origin: function (origin, callback) {
+        if (whiteList.includes(origin)) {
+            // Permite la conexión si el origen está en la lista blanca
+            callback(null, true);
         } else {
-            //No permitir la conexión
-            callback(new Error('Error de CORS'))
+            // No permitir la conexión si el origen no está en la lista blanca
+            callback(new Error('Error de CORS'));
         }
-
     }
-}
+};
 app.use(cors(corsOptions))
 
 
-//Definir una ruta
+//Definir nuestras rutas
 app.use('/api/services', servicesRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/appointments', appointmentsRoutes)
 
 //Definir puerto
 const PORT = process.env.PORT || 4000 

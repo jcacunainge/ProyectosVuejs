@@ -1,3 +1,24 @@
 {
-  "clientes": []
+  "clientes": [
+    {
+      "nombre": "Jhan Carlos",
+      "apellido": "Acuña Ordoñez",
+      "email": "vue@vue.com",
+      "telefono": "573007347398",
+      "empresa": "Azuldelmar",
+      "cargo": "biologo",
+      "estado": 1,
+      "id": 2
+    },
+    {
+      "nombre": "Jhan Carlos",
+      "apellido": "Acuña Ordoñez",
+      "email": "jancarlos.04@hotmail.com",
+      "telefono": "123456789",
+      "empresa": "verdugas el sandala",
+      "cargo": "vendedor",
+      "estado": 1,
+      "id": 3
+    }
+  ]
 }

@@ -2,7 +2,7 @@ export const servicesData = [
     { 
         name: 'Corte de cabello para hombres',
         description: 'Servicio de corte de pelo especializado para hombres.',
-        price: 100
+        price: 100 
     },
     { 
         name: 'Corte de cabello para mujeres',
