@@ -1,0 +1,66 @@
+{
+  "posts": [
+    {
+      "nombre": "Jhan Carlos",
+      "apellido": "Acuña",
+      "profesion": "Otra Profesión",
+      "correo": "ingeniero@ingeniero.com",
+      "telefono": "3007347398",
+      "id": 1
+    },
+    {
+      "nombre": "Kimberly Paola",
+      "apellido": "López Cantillo",
+      "profesion": "Administrador",
+      "correo": "administrador@administrador.com",
+      "telefono": "3007347398",
+      "id": 2
+    },
+    {
+      "nombre": "Luis Ronaldo",
+      "apellido": "Pertuz Acuña",
+      "profesion": "Doctor",
+      "correo": "lpertuz@medicosplus.com",
+      "telefono": "3007655673",
+      "id": 3
+    }
+  ],
+  "informacion-docentes": [
+    {
+      "id": 1,
+      "nombre_docente": "Profeson A",
+      "asignaturas": "Matematicas Ingles",
+      "horarios": "lunes 8:00 AM - 12:00 PM"
+    },
+    {
+      "id": 2,
+      "nombre_docente": "Profeson B",
+      "asignaturas": "Fisica Biología",
+      "horarios": "Martes 8:00 AM - 12:00 PM"
+    },
+    {
+      "nombre_docente": "Jc",
+      "asignaturas": "Termodinamica",
+      "horarios": "Jueves y viernes 8:30 a 9:30",
+      "id": 3
+    },
+    {
+      "nombre_docente": "Jc1",
+      "asignaturas": "Biología",
+      "horarios": "8:30 AM a 11:30 AM",
+      "id": 4
+    },
+    {
+      "nombre_docente": "Yarleidis",
+      "asignaturas": "Medicina",
+      "horarios": "8:30 AM a 9:30 AM",
+      "id": 5
+    },
+    {
+      "nombre_docente": "Kimberly",
+      "asignaturas": "Amando a Jhan Acuña",
+      "horarios": "8:30 AM a 11:30 AM",
+      "id": 6
+    }
+  ]
+}
