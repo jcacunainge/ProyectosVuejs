@@ -1,4 +1,5 @@
 <template>
+  {{ informacion }}
   <q-page class="q-pa-md">
     <q-table
       title="Estudiantes"
@@ -64,8 +65,6 @@
       }
 
       const eliminarEstudiante = async (id) => {
-        // Lógica para eliminar estudiante
-        console.log('Eliminar estudiante con ID:', id);
         try {
           $q.dialog({
           title: 'Eliminar',

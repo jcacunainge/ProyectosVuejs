@@ -24,6 +24,11 @@ const routes = [
         name: 'horarios',
         component: () => import('../pages/horarios.vue')
       },
+      {
+        path:'/login',
+        name: 'login',
+        component: () => import('../pages/login.vue')
+      },
 
     ]
   },
@@ -31,7 +36,7 @@ const routes = [
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue')
   }
-  
+
 ]
 
 

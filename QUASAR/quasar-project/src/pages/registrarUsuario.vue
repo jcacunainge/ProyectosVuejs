@@ -20,7 +20,6 @@
               v-model="form.apellido"
               label="Ingresa tus apellido *"
               lazy-rules
-              :rules=""
             />
             <q-select
                 class="col-12 col-sm-6"

@@ -23,6 +23,25 @@
       "correo": "lpertuz@medicosplus.com",
       "telefono": "3007655673",
       "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "nombre": "Jhan ",
+      "apellido": "1234",
+      "profesion": "Otra Profesión",
+      "correo": "j@gmail.com",
+      "telefono": "3007347398",
+      "id": 5
+    },
+    {
+      "nombre": "123456789",
+      "apellido": "123456789",
+      "profesion": "Administrador",
+      "correo": "123@gmail.com",
+      "telefono": "3007347398",
+      "id": 6
     }
   ],
   "informacion-docentes": [

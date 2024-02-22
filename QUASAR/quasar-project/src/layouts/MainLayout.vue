@@ -58,6 +58,11 @@ const linksList = [
     path: '/'
   },
   {
+    title: 'Login',
+    icon: 'home',
+    path: '/login'
+  },
+  {
     title: 'Registrar estudiante',
     icon: 'add',
     path: '/registrarUsuario'
@@ -84,7 +89,7 @@ export default defineComponent({
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
-      
+
     }
   }
 })
