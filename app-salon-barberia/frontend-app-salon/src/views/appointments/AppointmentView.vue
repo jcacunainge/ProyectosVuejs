@@ -26,8 +26,6 @@
     <!-- Encabezado -->
     <h2 class="text-3xl font-extrabold text-white">Detalles de Cita y Resumen</h2>
     <p class="text-white text-lg mt-5"> A continuación, verifica la información y confirma tu cita</p>
-
-    <!-- Sección de Servicios -->
     <h3 class="text-2xl font-extrabold text-white">Servicios</h3>
     <p v-if="appointments.noServicesSelected" class="text-white text-2xl text-center">No hay servicios Seleccionados</p>
     <div v-else class="grip gap-5 space-y-6">
@@ -58,7 +56,7 @@
                     v-model="appointments.date"
                 />
             </div>
-
+            
             <!-- Botones para selección de hora -->
             <div v-if="appointments.isDateSelected" class="flex-1 grid grid-cols-1 xl:grid-cols-2 gap-5 mt-10 lg:mt-0">
                 <button

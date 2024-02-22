@@ -24,9 +24,9 @@ export const useAppointmentsStore = defineStore('appointments', () => {
         }
     })
 
-    watch(date, () => {
-        // const { data } = await AppointmentApi.getByDate(date.value)
-        console.log(date.value)
+    watch(date, async () => {
+        const { data } = await AppointmentApi.getByDate(date.value)
+        console.log(data)
     })
 
     function clearAppointmentData(){
