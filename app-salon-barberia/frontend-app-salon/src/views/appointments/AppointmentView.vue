@@ -15,11 +15,15 @@
         month: 'MM'
     })
 
-    // Función para deshabilitar fechas en el calendario
-    const disableDate = (date) => {
-        const today = new Date()
-        return date < today || date.getMonth() > today.getMonth() || [0,6].includes(date.getDay() )
-    }
+// Función para deshabilitar fechas en el calendario permitiendo un mes de adelanto
+const disableDate = (date) => {
+    const today = new Date();
+    const oneMonthLater = new Date();
+    oneMonthLater.setMonth(today.getMonth() + 2);
+
+    return date < today || date >= oneMonthLater || [0, 6].includes(date.getDay());
+};
+
 </script>
 
 <template>
@@ -29,13 +33,11 @@
     <h3 class="text-2xl font-extrabold text-white">Servicios</h3>
     <p v-if="appointments.noServicesSelected" class="text-white text-2xl text-center">No hay servicios Seleccionados</p>
     <div v-else class="grip gap-5 space-y-6">
-        <!-- Componente SelectedService para mostrar servicios seleccionados -->
         <SelectedService
             v-for="service in appointments.services"
             :key="service._id"
             :service="service"
         />
-        <!-- Total a pagar -->
         <p class="text-right text-white text-2xl"> 
             <span class="font-black ">Total a pagar: {{ formatCurrency(appointments.totalAmount ) }}</span>
         </p>
@@ -58,7 +60,7 @@
             </div>
             
             <!-- Botones para selección de hora -->
-            <div v-if="appointments.isDateSelected" class="flex-1 grid grid-cols-1 xl:grid-cols-2 gap-5 mt-10 lg:mt-0">
+            <div class="flex-1 grid grid-cols-1 xl:grid-cols-2 gap-5 mt-10 lg:mt-0">
                 <button
                     v-for="hour in appointments.hours"
                         class="block text-blue-500 rounded text-xl font-black  ml-10 w-3/4"

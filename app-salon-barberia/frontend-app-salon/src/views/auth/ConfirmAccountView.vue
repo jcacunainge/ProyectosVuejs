@@ -2,13 +2,10 @@
     import { onMounted, inject } from 'vue';
     import { useRoute, useRouter } from 'vue-router'
     import AuthApi from '../../api/AuthApi'
-
-
     const toast = inject('toast')
     const route = useRoute()
     const router = useRouter()
     const { token } = route.params
-
     onMounted( async () => {
         try {
             const { data } = await AuthApi.verifyAccount(token)
@@ -26,9 +23,7 @@
             })
         }
     })
-
 </script>
-
 <template>
      <h1 class="text-2xl font-extrabold text-white text-center ">Verificar Cuenta</h1>
 </template>

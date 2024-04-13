@@ -11,7 +11,6 @@
             const { data: { token } } = await AuthApi.login(formData)
             localStorage.setItem('AUTH_TOKEN', token)
             router.push({name: 'my-appointments'})
- 
         } catch (error) {
             toast.open({
                 message: error.response.data.msg,
@@ -19,7 +18,6 @@
             })
         }
     }
-
 </script>
 
 <template>
@@ -27,7 +25,6 @@
         <h1 class="text-3xl font-extrabold text-white text-center ">Iniciar Sesión</h1>
         <p class="text-1xl text-white text-center mb-10">Si tienes una cuenta, inicia sesión</p>
     </div>
-
     <FormKit
         id="loginForm"
         type="form"
@@ -55,8 +52,6 @@
                 required: 'Este campo es obligatorio',
             }"
         />
-
         <FormKit type="submit">Iniciar Sesión</FormKit>
-
     </FormKit>
 </template>

@@ -2,9 +2,7 @@
     import { inject } from 'vue'
     import { reset } from '@formkit/vue'
     import AuthApi from '../../api/AuthApi'
-    
     const toast = inject('toast')
-
     //Obtener los datos del formulario
     const handleSubmit = async ({ password_confirm, ...formData}) =>{
         try { 
@@ -14,7 +12,6 @@
                 type: 'success'
             })
             reset('registerForm')
-
         } catch (error) {
             toast.open({
                 message: error.response.data.msg,
@@ -22,7 +19,6 @@
             })
         }
     }
-
 </script>
 
 <template>
@@ -30,7 +26,6 @@
         <h1 class="text-2xl font-extrabold text-white text-center ">Crea una cuenta</h1>
         <p class="text-1xl text-white text-center"> Crea una cuenta en Appsalon</p>
     </div>
-
     <FormKit
         id="registerForm"
         type="form"
@@ -38,11 +33,10 @@
         incomplete-message="Reviza los campos obligatorios"
         @submit="handleSubmit"
     >
-
         <FormKit
             type="text"
             name="name"
-            label="* Nombre."
+            label="* Nombre:"
             placeholder="Ingresa tu nombre"
             validation="required|length:3"
             :validation-messages=" {
@@ -50,7 +44,6 @@
                 length: 'El nombre es muy corto'
             }"
         />
-
         <FormKit
             type="email"
             name="email"
@@ -62,7 +55,6 @@
                 email: 'El email no es válido'
             }"
         />
-
         <FormKit
             type="password"
             name="password"
@@ -74,7 +66,6 @@
                 length: 'El password debe contener al menos 8 caracteres'
             }"
         />
-
         <FormKit
             type="password"
             name="password_confirm"

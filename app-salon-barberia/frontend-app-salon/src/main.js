@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 import { plugin, defaultConfig } from '@formkit/vue'
 import { useToast } from 'vue-toast-notification'
 import config from '../formkit.config'
+import '../node_modules/flowbite-vue/dist/index.css'
 
 import App from './App.vue'
 import router from './router'

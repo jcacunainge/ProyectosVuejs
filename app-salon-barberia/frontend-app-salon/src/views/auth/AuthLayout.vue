@@ -8,9 +8,9 @@
 </script>
 
 <template>
-    <div class=" mx-auto lg:w-3/5">
+    <div class=" mx-auto lg:w-3/5 mt-20">
         <RouterView></RouterView>
-        <nav class=" mt-10 flex flex-col items-center lg:flex-row lg:justify-between lg:space-y-0">
+        <nav class="flex flex-col items-center lg:flex-row lg:justify-between lg:space-y-0">
             <RouterLink 
                 v-for="authRoutes in authRoutes"
                 class="uppercase font-bold text-white"
