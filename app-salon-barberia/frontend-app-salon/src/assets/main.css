@@ -1,9 +1,0 @@
-/* styles.css */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Otras reglas de estilos personalizadas */
-
-@import '/node_modules/flowbite-vue/dist/index.css' 
