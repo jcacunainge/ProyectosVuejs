@@ -12,7 +12,7 @@ router.post('/login', login)
 router.post('/forgot-password', forgotPassword)
 router.route('/forgot-password/:token')
     .get(verifyPasswordResetToken)
-    .post(updatePassword)
+    .post(updatePassword)    //hola mundo
 
 // Area Privada - Requiere un JWT 
 router.get('/user', authMiddleware, user )
