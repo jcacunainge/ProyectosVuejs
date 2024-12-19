@@ -11,7 +11,7 @@
     "seed:import": "node data/seed.js --import",
     "seed:destroy": "node data/seed.js --destroy"
   },
-  "author": "Juan De la torre @codigoconjuan",
+  "author": "jcacunainge@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.22"
