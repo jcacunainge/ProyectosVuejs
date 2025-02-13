@@ -53,7 +53,6 @@ export const useAuthStore = defineStore('auth', () => {
             });
     };
 
-    // Computed property para verificar si hay un mensaje de error
     const hasError = computed(() => {
         return errorMsg.value;
     });
